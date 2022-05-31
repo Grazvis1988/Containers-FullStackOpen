@@ -1,0 +1,12 @@
+Script started on 2022-05-31 21:34:08+03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="190" LINES="53"]
+(base) grazvydas@ultra [32m~/Desktop/Containers/part12-containers-applications [91m(main)[00m$ docker run -it ubuntu bash
+]0;root@aa2d814bae87: /root@aa2d814bae87:/# [K]0;root@aa2d814bae87: /root@aa2d814bae87:/# cd /usr/src/
+]0;root@aa2d814bae87: /usr/srcroot@aa2d814bae87:/usr/src# ls
+]0;root@aa2d814bae87: /usr/srcroot@aa2d814bae87:/usr/src# mkdir app; cd app
+]0;root@aa2d814bae87: /usr/src/approot@aa2d814bae87:/usr/src/app# touch index.js
+]0;root@aa2d814bae87: /usr/src/approot@aa2d814bae87:/usr/src/app# exit
+exit
+(base) grazvydas@ultra [32m~/Desktop/Containers/part12-containers-applications [91m(main)[00m$ eixt[K[K[Kxit
+exit
+
+Script done on 2022-05-31 21:35:38+03:00 [COMMAND_EXIT_CODE="0"]
