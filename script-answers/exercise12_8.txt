@@ -1,0 +1,57 @@
+Script started on 2022-06-05 19:06:58+03:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="190" LINES="53"]
+(base) grazvydas@ultra [32m~/Desktop/Containers/part12-containers-applications/todo-app/todo-backend [91m(main)[00m$ docker conat[K[Ktainer ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED             STATUS          PORTS                                         NAMES
+f51b8cd6761b   nginx     "/docker-entrypoint.…"   23 minutes ago      Up 23 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp         laughing_bartik
+e93839fac287   mongo     "docker-entrypoint.s…"   About an hour ago   Up 4 minutes    0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+(base) grazvydas@ultra [32m~/Desktop/Containers/part12-containers-applications/todo-app/todo-backend [91m(main)[00m$ dc[Kocker con[K[K[Kexd[Kec -it bach[K[K[K[Ktodo-backend-mongo-1 bash
+root@e93839fac287:/# mongo -u root -p example
+MongoDB shell version v5.0.9
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("ae76cb7d-286c-43eb-9bca-da8555849dd4") }
+MongoDB server version: 5.0.9
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the-[3G[Juse the[10G_database[3G[Juse the_database[19G
+switched to db the_database
+> show collections[3G[Jshow collections[19G
+todos
+> db.todos.find({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("629cbf9803a549bef1b41af3"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("629cbf9803a549bef1b41af4"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("629cc0391c837a3d15e1d5d4"), "text" : "Finish this course!", "done" : true, "__v" : 0 }
+> db.todos.insert({te[3G[Jdb.todos.insert({t[21G[3G[Jdb.todos.insert({[20G texh[3G[Jdb.todos.insert({ tex[24Gt: "Increase the number of tools in my toolbelt" }[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt" [73Gdon[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt" do[75G[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt" d[74G[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt" [73G[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt"[72G, done: "[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: [80Gture[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: tur[83G[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: tu[82G[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: t[81Grue}[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: true[84G[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: tru[83G[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: tr[82G[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: t[81G[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: [80Gfalse })[3G[Jdb.todos.insert({ text: "Increase the number of tools in my toolbelt", done: false })[88G
+WriteResult({ "nInserted" : 1 })
+> db.todos.find({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("629cbf9803a549bef1b41af3"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("629cbf9803a549bef1b41af4"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("629cc0391c837a3d15e1d5d4"), "text" : "Finish this course!", "done" : true, "__v" : 0 }
+{ "_id" : ObjectId("629cd56103519e692f7a4443"), "text" : "Increase the number of tools in my toolbelt", "done" : false }
+> eix[3G[Jei[5G[3G[Je[4Gxit[3G[Jexit[7G
+bye
+root@e93839fac287:/# exit
+exit
+(base) grazvydas@ultra [32m~/Desktop/Containers/part12-containers-applications/todo-app/todo-backend [91m(main)[00m$ exit
+exit
+
+Script done on 2022-06-05 19:12:00+03:00 [COMMAND_EXIT_CODE="0"]
