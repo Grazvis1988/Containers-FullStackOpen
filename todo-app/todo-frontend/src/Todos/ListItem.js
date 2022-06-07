@@ -1,5 +1,5 @@
 const ListItem = ({ todo, onClickDelete, onClickComplete }) => {
-        const doneInfo = (
+  const doneInfo = (
           <>
             <span>This todo is done</span>
             <span>
@@ -8,7 +8,7 @@ const ListItem = ({ todo, onClickDelete, onClickComplete }) => {
           </>
         )
 
-        const notDoneInfo = (
+  const notDoneInfo = (
           <>
             <span>
               This todo is not done
