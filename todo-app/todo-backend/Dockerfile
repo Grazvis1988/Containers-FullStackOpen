@@ -9,6 +9,7 @@ RUN npm ci
 USER node 
 
 ENV MONGO_URL="mongodb://the_username:the_password@localhost:3456/the_database"
-ENV REDIS_URL="//localhost:6378"
+ENV REDIS_URL="//localhost:6379"
+
 
 CMD npm start
