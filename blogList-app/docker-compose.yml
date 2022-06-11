@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app: 
+    image: bloglist-frontend
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: bloglist-front-build
+    volumes:
+        - ./frontend/:/usr/src/app
+  server:
+    image: express-bloglist-server
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes: 
+      - ./backend/:/usr/src/app
+      - ./frontend/build/:/usr/src/app/build
+    depends_on: 
+      - app
+    ports:
+      - 8080:5000
